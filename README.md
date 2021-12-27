@@ -3,7 +3,7 @@
 
 ## 👩‍💻 **Developer**
 
-|<CENTER>MACHINE LEARNING|<CENTER>WEB|<CENTER>APP|
+|<CENTER>MACHINE LEARNING<BR>& WEB|<CENTER>MACHINE LEARNING<BR>& WEB|<CENTER>APP|
 |--|--|--|
-|![다연](https://avatars.githubusercontent.com/u/96629346?v=4)|![서영](https://avatars.githubusercontent.com/u/88052367?v=4)|![정윤](https://mblogthumb-phinf.pstatic.net/MjAyMTEyMjdfMTg2/MDAxNjQwNjE0MTg4NzY5.W6TgsXxMrAs30ixOMNWwUzK_rFImw6NP4bhpGcgCGrAg.eRSXoCnksgJsRX8FER308d-hgjsHmXX5OKEOvBi3Wv4g.JPEG.pmj1010235/1640614160146.jpg?type=w800)|
+|<img src="https://avatars.githubusercontent.com/u/96629346?v=4"  width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/88052367?v=4"  width="150" height="150"/>|<img src="https://mblogthumb-phinf.pstatic.net/MjAyMTEyMjdfMTg2/MDAxNjQwNjE0MTg4NzY5.W6TgsXxMrAs30ixOMNWwUzK_rFImw6NP4bhpGcgCGrAg.eRSXoCnksgJsRX8FER308d-hgjsHmXX5OKEOvBi3Wv4g.JPEG.pmj1010235/1640614160146.jpg?type=w800"  width="150" height="150"/>|
 |<CENTER>[내룸](https://github.com/nae-room)</CENTER>|<CENTER>[띵띵](https://github.com/syoung102)</CENTER>|<CENTER>짬윤</CENTER>|
