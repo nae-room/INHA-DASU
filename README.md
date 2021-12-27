@@ -2,7 +2,6 @@
 2021학년도 인하 종합설계 경진대회 동상 수상작
 
 ## 👩‍💻 **Developer**
-___
 
 |<CENTER>MACHINE LEARNING|<CENTER>WEB|<CENTER>APP|
 |--|--|--|
