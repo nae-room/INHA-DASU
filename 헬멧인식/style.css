@@ -1,0 +1,102 @@
+.title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+header {
+    height: 80px;
+
+    color: black;
+    background: #b7cae2;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    text-align: center;
+	 background: #F4F4F4;
+}
+
+#label-container{
+	font-weight: bold;
+}
+
+#camera,
+#camera--view,
+#camera--sensor,
+#camera--output {
+    position: fixed;
+    width: 50%;
+    left: 25%;
+    bottom: 25%;
+
+}
+
+#camera--view,
+#camera--sensor,
+#camera--output {
+    transform: scaleX(-1);
+    filter: FlipH;
+}
+
+#camera--trigger {
+    width: 40%;
+    color: black;
+    font-weight: bold;
+    background-color: #b7cae2;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0, 0.2);
+    position: fixed;
+    top: 81%;
+    left: calc(30%);
+}
+
+#camera--re {
+    width: 30%;
+    color: black;
+    font-weight: bold;
+    background-color: #b7cae2;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0, 0.2);
+    position: fixed;
+    top: 81%;
+    right: calc(15%);
+}
+
+#camera--ok {
+    width: 30%;
+    color: black;
+    background-color: #b7cae2;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 30px;
+    border: none;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0, 0.2);
+    position: fixed;
+    top: 81%;
+    left: calc(15%);
+}
+
+.taken {
+    position: fixed;
+    width: 50%;!important
+    left: 25%;!important
+    bottom: 25%;!important
+}

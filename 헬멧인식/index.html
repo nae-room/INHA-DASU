@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>헬멧 안 쓰면 안 빌려주지~</title>
+    </head>
+
+    <header>
+        <h2>&nbsp;&nbsp;No helmet, No scooter</h2>
+        <nav>
+            <div id="nav_menu">
+				<span>|</span>
+                <span>삼다수&nbsp;&nbsp;</span>                
+            </div>
+        </nav>
+    </header>
+
+    <body>
+        <div>
+            <p>
+                <br />
+                올바르게 헬멧을 착용한 모습을 찍어주세요. <br />
+                촬영하기 버튼을 누르면 카메라가 실행됩니다.
+            </p>
+        </div>
+        <div id="camera">
+            <canvas id="camera--sensor"></canvas>
+            <video id="camera--view" autoplay playsinline></video>
+            <img src="//:0" alt="" id="camera--output" />
+            <button id="camera--ok" onClick="predict123()">제출하기</button>
+            <button id="camera--trigger" ;>촬영하기</button>
+            <button id="camera--re" ; onClick="window.location.reload()">다시촬영</button>
+        </div>
+        <div id="label-container"></div>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+
+        <script type="text/javascript">
+            document.getElementById('camera--re').style.display = 'none';
+            document.getElementById('camera--ok').style.display = 'none';
+
+            const URL = 'https://teachablemachine.withgoogle.com/models/Eb9tbqyPx/';
+            let model, labelContainer, maxPredictions;
+
+            let constraints = { video: { facingMode: 'user' }, audio: false };
+
+            const cameraView = document.querySelector('#camera--view');
+            const cameraOutput = document.querySelector('#camera--output');
+            const cameraSensor = document.querySelector('#camera--sensor');
+            const cameraTrigger = document.querySelector('#camera--trigger');
+            function cameraStart() {
+                navigator.mediaDevices
+                    .getUserMedia(constraints)
+                    .then(function (stream) {
+                        track = stream.getTracks()[0];
+                        cameraView.srcObject = stream;
+                    })
+                    .catch(function (error) {
+                        console.error('카메라에 문제가 있습니다.', error);
+                    });
+            }
+
+            cameraTrigger.addEventListener('click', function () {
+                document.getElementById('camera--trigger').style.visibility = 'hidden';
+                document.getElementById('camera--re').style.display = 'block';
+                document.getElementById('camera--ok').style.display = 'block';
+
+                cameraSensor.width = cameraView.videoWidth;
+                cameraSensor.height = cameraView.videoHeight;
+                cameraSensor.getContext('2d').drawImage(cameraView, 0, 0);
+                cameraOutput.src = cameraSensor.toDataURL('image/webp');
+                cameraOutput.classList.add('taken');
+                console.log(cameraView.videoheight);
+            });
+
+            window.addEventListener('load', cameraStart, false);
+
+            async function init() {
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+                labelContainer = document.getElementById('label-container');
+                for (let i = 0; i < maxPredictions; i++) {
+                    labelContainer.appendChild(document.createElement('div'));
+                }
+            }
+
+            async function predict123() {
+                var image123 = document.getElementById('camera--output');
+                const prediction = await model.predict(image123, false);
+                if (prediction[0].probability.toFixed(2) >= 0.95) {
+                    assign();
+                } else {
+                    labelContainer.childNodes[0].innerHTML = '';
+                    labelContainer.childNodes[1].innerHTML =
+                        '헬멧 인식에 <span style = "color : red">실패</span>하였습니다. <br> 다시촬영을 클릭하세요.';
+                }
+            }
+
+            async function assign() {
+                location.assign('https://peaceful-heisenberg-de3814.netlify.app/index.html');
+            }
+
+            init();
+        </script>
+    </body>
+</html>
