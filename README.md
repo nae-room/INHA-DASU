@@ -1,6 +1,13 @@
 # INHA-DASU
 2021학년도 인하 종합설계 경진대회 동상 수상작
 
+## ⛑ **Introduce**
+머신러닝 기술을 활용하여 전동 킥보드 대여 시 사용자의 헬멧 착용 미착용 여부를 판단하여 헬멧을 착용하였을 때만 대여하도록 하는 애플리케이션입니다.
+
+## 📢 **Demo**
+- [머신러닝 사이트](https://teachablemachine.withgoogle.com/models/Eb9tbqyPx/)
+- [삼다수 애플리케이션](https://drive.google.com/file/d/1a2BYO6bUxtigXliJBcswc2GX1eG8cY4Q/view)
+
 ## 👩‍💻 **Developer**
 
 |<CENTER>MACHINE LEARNING<BR>& WEB|<CENTER>MACHINE LEARNING<BR>& WEB|<CENTER>APP|
